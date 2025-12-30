@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>URL Encoder</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <h1>URL Encoder</h1>
+    <p class="sub">
+      Paste a URL, press <kbd>Enter</kbd>, and get an <code>encodeURIComponent</code> result.
+    </p>
+
+    <label class="label" for="raw">Input URL</label>
+    <input
+      id="raw"
+      class="input"
+      type="url"
+      placeholder="https://docs.google.com/spreadsheets/d/e/.../pub?gid=0&single=true&output=csv"
+      autocomplete="off"
+      spellcheck="false"
+    />
+
+    <div class="row">
+      <button id="encodeBtn" class="btn">Encode</button>
+      <button id="clearBtn" class="btn secondary">Clear</button>
+    </div>
+
+    <section class="card">
+      <div class="cardHead">
+        <h2>Encoded URL</h2>
+        <button id="copyEncoded" class="btn small">Copy</button>
+      </div>
+      <textarea id="encoded" class="output" readonly placeholder="(output)"></textarea>
+    </section>
+
+    <section class="card">
+      <div class="cardHead">
+        <h2>Query string example</h2>
+        <button id="copyQuery" class="btn small">Copy</button>
+      </div>
+      <textarea id="query" class="output" readonly placeholder="?csv=(encoded-url)"></textarea>
+      <p class="hint">Tip: replace <code>csv</code> with any parameter name you need.</p>
+    </section>
+
+    <p id="status" class="status" aria-live="polite"></p>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
